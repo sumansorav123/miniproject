@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button hover</title>
+</head>
+<style>
+    .btn{
+        color: rgb(17,112,0);
+        border: 1px solid rgb(17,112,0);
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        background: transparent;
+        position: relative;
+        transition: all 0.5s;
+        overflow: hidden;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    .btn:hover{
+        color: #ffff;
+    }
+    .btn::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        top: 0;
+        left: -20px;
+        background-color: rgb(17,112,0);
+        z-index: -1;
+        transform: skewX(45deg);
+        transition: all 1s;
+    }
+    .btn:hover::before{
+        width: 160%;
+    }
+</style>
+<body>
+    <button class="btn">click m e</button>
+</body>
+</html>
