@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 80px auto;
+    }
+
+    section {
+        background-image: linear-gradient(to right, #ff5722, #f4c63d);
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        width: 30%;
+        margin: auto;
+        height: 50vh;
+        position: relative;
+        border-radius: 12px;
+    }
+
+    h2 {
+        font-size: 40px;
+        color: chartreuse;
+    }
+
+    label {
+        font-size: 25px;
+        color: #aeff00;
+    }
+
+    .inp {
+        font-size: 20px;
+        border: none;
+        width: 400px;
+        border-radius: 5px;
+        border-bottom: 2px solid blueviolet;
+        outline: none;
+        padding: 3px;
+        color: #ffff;
+        background: transparent;
+    }
+
+    button {
+        padding: 5px;
+        border-radius: 8px;
+        border: none;
+        width: 80px;
+        font-family: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        background-color: blueviolet;
+        color: aliceblue;
+    }
+
+    .check {
+        width: 300px;
+        position: relative;
+        left: 86px;
+    }
+
+    #showMessage {
+        text-align: center;
+        background-color: beige;
+        padding: 5px;
+        border-radius: 5px;
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="message">
+        <h2 id="showMessage"></h2>
+    </div>
+    <section>
+        <div class="singin">
+            <h2>Sign In</h2>
+            <form action="">
+                <label for="email">Email: </label><br>
+                <input class="inp" type="text" id="email" name="email" autocomplete="off"><br><br>
+                <label for="password">Password: </label><br>
+                <input class="inp" type="password" id="password" name="password"><br><br>
+                <input class="check" type="checkbox" name="checkbox" onclick="showPass()">show Passwords
+            </form>
+            <button type="submit" id="login" >Submit</button>
+        </div>
+    </section>
+    </div>
+</body>
+
+<script>
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const message = document.getElementById("showMessage");
+    const logibtn = document.getElementById("login");
+
+    const userid = "user@gmail.com" 
+    const userpass = "passwordd"
+
+  //  Show/hide password function
+        function showPass()  {
+        if(password.type === "password"){
+            password.type = "text"
+        }else{
+            password.type = "password"
+        }
+    }
+
+    logibtn.addEventListener("click", ()=>{
+        if((email.value == userid)&&(password.value == userpass) ){
+            alert("login successful")
+            window.open("./index.html")
+        }else if ((email.value == "") || (password.value == "")){
+            message.innerText = "Please enter your email address and password.";
+        }else{
+            message.innerHTML = "Please enter your correct email address and password."
+        }
+    })
+</script>
+
+<script>
+    const passw = document.getElementById("password");
+    const showPass = document.getElementById("showPass");
+
+    showPass.addEventListener("click",()=>{
+        if(passw.type === "password"){
+            passw.type = "text"
+        }else{
+            passw.type = "password"
+    }
+});
+</script>
+
+</html>
