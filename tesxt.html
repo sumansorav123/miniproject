@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+</head>
+<body>
+    <h1>Text Editor</h1>
+
+    <label for="">Text Here : - </label>
+    <p id="editor"></p>
+    <input type="text" placeholder="Type your text here..." id="txtArea" >
+ </body>
+ <script>
+    const inputText = document.getElementById("txtArea");
+    const output  =  document.getElementById("editor") ;
+    
+   // function to display the value
+
+   inputText.addEventListener("input", function(){
+           console.log(inputText.value)
+           output.innerHTML = inputText.value;
+   })
+ </script>
+</html>
+ 
