@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load</title>
+</head>
+<style>
+#preload{
+    position: fixed;
+    background-color: #0000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-image: url("https://media1.tenor.com/m/UnFx-k_lSckAAAAC/amalie-steiness.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+</style>
+<body>
+    <h1>load page</h1>
+    <div id="preload"></div>
+</body>
+<script>
+    function loadpage(){
+        window.onload = function(){
+          setTimeout(()=>{
+            document.querySelector("#preload").style.display= "none"
+          },2000)
+        }
+    }
+
+    loadpage();
+  
+</script>
+</html>
