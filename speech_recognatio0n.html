@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text-to-Speech Recognition</title>
+</head>
+<body>
+
+  <input type="text" id="text" placeholder="enter text hear"><br>
+  <button onclick="speech()">speech</button>
+
+</body>
+<script>
+    function speech(){
+        let text =  document.getElementById("text");
+        let recognition = new webkitSpeechRecognition();
+
+        recognition.lang = "en-US";
+        recognition.onresult = function(e){
+            console.log(e);
+            text.value = e.results[0][0].transcript;
+        }
+        recognition.start()
+    }
+
+</script>
+</html>
